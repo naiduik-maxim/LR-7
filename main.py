@@ -29,6 +29,12 @@ def load_and_analyze(file_path, location_name):
         print(f" Minimum Noise Level: {min_noise} dBA")
         print(f" Variation: {variation} ")
 
+        print(f" Conclusion: ", sep="", end="")
+
+        if avg_noise > 30:
+            print("Loud noise, not good for sleep")
+        else:
+            print("Quiet noise, good for sleep")
         print("---------------------------------")
         
         df = df.rename(columns={'dBa': location_name})
